@@ -1,11 +1,14 @@
 <template>
   <v-main>
-    <v-card width="360" class="mx-auto my-auto" hover>
+    <v-card width="600" class="mx-auto my-auto" hover>
       <v-card-title>Home</v-card-title>
       <v-card-text>
+        <div class="text-h1">Q-ROBOT</div>
         <v-row>
           <v-col>
-            <v-btn @click="test">test</v-btn>
+            <p class="text-center">
+              <router-link to="/questions">問題一覧</router-link>
+            </p>
           </v-col>
         </v-row>
       </v-card-text>
