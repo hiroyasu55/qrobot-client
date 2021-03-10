@@ -18,7 +18,7 @@ const mutations = {
 
 const actions = {
   async setUser({commit, state}, user) {
-    console.log(`[auth]setUser:${user.username}`)
+    console.log(`[auth]setUser:${user ? user.username : 'null'}`)
     commit('setUser', user)
   },
   async login({commit, state}, {name, password}) {
