@@ -19,7 +19,10 @@ export function roundNumber(number, count = 0) {
 
 export function vtextToText(text) {
   try {
-    return text.replace(/\{([^|}]+)\|([^|{]+)\}/g, '$1').replace(/\^/g, '')
+    return text
+      .replace(/\{([^|}]+)\|([^|{]+)\}/g, '$1')
+      .replace(/\{([^|}]+)\}/g, '$1')
+      .replace(/\^/g, '')
   } catch (e) {
     console.warn(`[vtextToText]cannot revise: "${text}"`, e)
     return false
@@ -36,8 +39,9 @@ export function textToSsml(text) {
       .join('')
       .replace(
         /\{([^|}]+)\|([^|{]+)\}/g,
-        '<phoneme alphabet="x-amazon-pron-kana" ph="$2">$1</phoneme>'
+        `<phoneme alphabet="x-amazon-pron-kana" ph="$2">$1</phoneme>`
       )
+      .replace(/\{([^|}]+)\}/g, '')
       // .replace(/。/g, '<break time="0.2s"></break>')
       .replace(/、/g, '<break time="0.2s"></break>')
       .replace(/\^/g, '<break time="0.1s"></break>')
