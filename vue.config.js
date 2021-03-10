@@ -7,4 +7,7 @@ module.exports = {
       title: 'O-ROBOT',
     },
   },
+  chainWebpack: (config) => {
+    config.performance.maxEntrypointSize(2000).maxAssetSize(2000)
+  },
 }
