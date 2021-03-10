@@ -1,0 +1,5 @@
+{
+    "tableName": "QrobotQuestions",
+    "partitionKeyName": "id",
+    "partitionKeyType": "N"
+}

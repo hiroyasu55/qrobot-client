@@ -1,0 +1,56 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-qrobot-dev-91524-authRole",
+            "UnauthRoleArn": "arn:aws:iam::633674755550:role/amplify-qrobot-dev-91524-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::633674755550:role/amplify-qrobot-dev-91524-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-qrobot-dev-91524-deployment",
+            "UnauthRoleName": "amplify-qrobot-dev-91524-unauthRole",
+            "StackName": "amplify-qrobot-dev-91524",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:633674755550:stack/amplify-qrobot-dev-91524/c0b52ed0-69a2-11eb-bd51-0e38d71f511f",
+            "AmplifyAppId": "d1skan3qj1gn9e"
+        },
+        "categories": {
+            "auth": {
+                "qrobot045e0432": {}
+            },
+            "function": {
+                "qrobotlayer": {
+                    "deploymentBucketName": "amplify-qrobot-dev-91524-deployment",
+                    "s3Key": "amplify-builds/qrobotlayer-build.zip"
+                },
+                "QrobotVoice": {
+                    "deploymentBucketName": "amplify-qrobot-dev-91524-deployment",
+                    "s3Key": "amplify-builds/QrobotVoice-736355436574326a3239-build.zip"
+                },
+                "QrobotQuestions": {
+                    "deploymentBucketName": "amplify-qrobot-dev-91524-deployment",
+                    "s3Key": "amplify-builds/QrobotQuestions-6a306d45485161794662-build.zip"
+                }
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1skan3qj1gn9e",
+                    "type": "manual"
+                }
+            }
+        },
+        "nonCFNdata": {
+            "function": {
+                "qrobotlayer": {
+                    "layerVersionMap": {
+                        "1": {
+                            "permissions": [
+                                {
+                                    "type": "private"
+                                }
+                            ],
+                            "hash": "WA7ifF3fry3Zgyj1nlgwepgxhvMKbuDxllQdC2DrcK0="
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

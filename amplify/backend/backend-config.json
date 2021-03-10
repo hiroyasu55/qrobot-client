@@ -1,0 +1,150 @@
+{
+  "auth": {
+    "qrobot045e0432": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "storage": {
+    "s32509b5a2": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    },
+    "qrobotsample": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    },
+    "QrobotQuestions": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    },
+    "QrobotSequences": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "function": {
+    "qrobotlambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "qrobotlayer": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    },
+    "qrobotsample": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "qrobotsample",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        },
+        {
+          "category": "function",
+          "resourceName": "qrobotlayer",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "QrobotQuestions": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "QrobotQuestions",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "QrobotSequences",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "QrobotVoice": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "s32509b5a2",
+          "attributes": [
+            "BucketName"
+          ]
+        }
+      ]
+    }
+  },
+  "api": {
+    "qrobotapigateway": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "qrobotlambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "qrobotsample",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "QrobotQuestions",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "QrobotVoice",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
+    }
+  }
+}

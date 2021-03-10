@@ -1,0 +1,19 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "QrobotQuestions": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "QrobotSequences": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

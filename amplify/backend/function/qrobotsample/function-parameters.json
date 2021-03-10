@@ -1,0 +1,9 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "qrobotlayer",
+      "version": 1
+    }
+  ]
+}

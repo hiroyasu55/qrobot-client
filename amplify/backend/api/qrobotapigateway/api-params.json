@@ -1,0 +1,121 @@
+{
+    "paths": [
+        {
+            "name": "/test",
+            "lambdaFunction": "qrobotlambda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/test"
+        },
+        {
+            "name": "/sample",
+            "lambdaFunction": "qrobotsample",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/sample"
+        },
+        {
+            "name": "/questions",
+            "lambdaFunction": "QrobotQuestions",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/questions"
+        },
+        {
+            "name": "/voice",
+            "lambdaFunction": "QrobotVoice",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/voice"
+        }
+    ],
+    "resourceName": "qrobotapigateway",
+    "apiName": "qrobotapigateway",
+    "functionArns": [
+        {
+            "lambdaFunction": "qrobotlambda"
+        },
+        {
+            "lambdaFunction": "qrobotsample"
+        },
+        {
+            "lambdaFunction": "QrobotQuestions"
+        },
+        {
+            "lambdaFunction": "QrobotVoice"
+        }
+    ],
+    "privacy": {
+        "auth": 4,
+        "unauth": 0,
+        "authRoleName": "amplify-qrobot-dev-91524-authRole",
+        "unAuthRoleName": "amplify-qrobot-dev-91524-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "qrobotlambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "qrobotsample",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "QrobotQuestions",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "QrobotVoice",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "c4d550d0"
+}
