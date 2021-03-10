@@ -1,11 +1,10 @@
 .DS_Store
-node_modules
+/node_modules
 /dist
 .node-version
 
 # env files
 .env
-.env.*
 
 # Work files
 *.log*
@@ -13,7 +12,8 @@ tmp/**
 temp/**
 work/**
 data/**
-config.*.json
+src/configs/**
+!src/configs/.gitkeep
 
 # Editor directories and files
 .idea
