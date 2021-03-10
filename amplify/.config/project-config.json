@@ -11,7 +11,8 @@
       "SourceDir": "src",
       "DistributionDir": "dist",
       "BuildCommand": "yarn run build",
-      "StartCommand": "yarn run serve"
+      "StartCommand": "yarn run serve",
+      "ServerlessContainers": false
     }
   }
 }
