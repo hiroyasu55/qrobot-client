@@ -12,8 +12,6 @@ tmp/**
 temp/**
 work/**
 data/**
-src/configs/**
-!src/configs/.gitkeep
 
 # Editor directories and files
 .idea
