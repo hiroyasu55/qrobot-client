@@ -19,7 +19,7 @@
         <v-list-item
           v-for="item in drawerItems"
           :key="item.title"
-          :to="item.url"
+          :to="item.to"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -66,8 +66,8 @@ export default {
     drawerItems() {
       return [
         {title: 'ホーム', icon: 'mdi-home', to: '/'},
-        {title: '問題', icon: 'mdi-help-box', url: '/questions'},
-        {title: '設定', icon: 'mdi-cog', url: '#'},
+        {title: '問題', icon: 'mdi-help-box', to: '/questions'},
+        {title: '設定', icon: 'mdi-cog', to: '#'},
       ]
     },
   },
