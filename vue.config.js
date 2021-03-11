@@ -9,14 +9,14 @@ module.exports = {
       title: 'O-ROBOT',
     },
   },
-  configureWebpack: {
-    resolve: {
-      alias: {
-        config: path.resolve(`src/configs/config.${process.env.NODE_ENV}.js`),
-      },
-    },
-  },
+  // configureWebpack: {
+  //   resolve: {
+  //     alias: {
+  //       config: path.resolve(`src/configs/config.${process.env.NODE_ENV}.js`),
+  //     },
+  //   },
+  // },
   chainWebpack: (config) => {
-    config.performance.maxEntrypointSize(3000000).maxAssetSize(2000000)
+    config.performance.maxEntrypointSize(4000000).maxAssetSize(2500000)
   },
 }
