@@ -105,6 +105,11 @@
             </template>
 
             <template v-if="deviceType == 'mobile'">
+              <v-card-title>
+                問題
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click="add">追加</v-btn>
+              </v-card-title>
               <v-card-text>
                 <v-data-table
                   :headers="headers.mobile"
@@ -114,6 +119,7 @@
                   @page-count="pageCount = $event"
                   :search="search"
                   class="questions-table elevation-1"
+                  no-data-text="データがありません。"
                   hide-default-header
                   hide-default-footer
                 >
@@ -122,7 +128,10 @@
                       <td>
                         <v-row class="pt-2">
                           <v-col>
-                            {{ shortenText(vtextToText(item.question, 15)) }}
+                            {{ shortenText(vtextToText(item.question), 15) }}
+                            <span v-if="!item.questionVoiceFile" class="ml-2"
+                              >!</span
+                            >
                           </v-col>
                         </v-row>
                         <v-row class="pb-2">
