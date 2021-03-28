@@ -54,7 +54,7 @@ export default {
     return {
       authConfig: {
         signInConfig: {
-          // isSignUpDisplayed: false,
+          isSignUpDisplayed: false,
         },
         signUpConfig: {
           hideAllDefaults: true,
