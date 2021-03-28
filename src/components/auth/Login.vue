@@ -3,7 +3,9 @@
     <div class="authenticator__wrapper d-flex justify-center">
       <amplify-authenticator :auth-config="authConfig"></amplify-authenticator>
     </div>
+
     <!--
+
       <amplify-sign-in></amplify-sign-in>
         <amplify-sign-up :sign-up-config="signUpConfig"></amplify-sign-up>
       -->
@@ -17,7 +19,8 @@ $box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%)
 
 .authenticator__wrapper {
   div[class^='Form__formSection'] {
-    width: 360px;
+    // width: 360px;
+    min-width: 360px;
     color: rgba(0, 0, 0, 0.87);
     border-radius: $border-radius;
     box-shadow: $box-shadow;
