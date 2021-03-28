@@ -92,9 +92,6 @@ export default {
               displayOrder: 5,
             },
           ],
-          // handleSubmit() {
-          //   throw new Error('handleSubmit')
-          // },
         },
       },
     }
