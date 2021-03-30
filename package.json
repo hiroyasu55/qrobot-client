@@ -64,6 +64,6 @@
     "not dead"
   ],
   "gitHooks": {
-    "pre-commit": "echo 'sssss"
+    "pre-commit": ".githooks/pre-commit"
   }
 }
