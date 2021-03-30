@@ -5,6 +5,7 @@
 branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
        "$(git describe --contains --all HEAD)"
 echo branch
+exit 1
 
 if [ "${branch##refs/heads/}" = "master" ]; then
     printf "\e[31m%s\n\e[m" "[Error]"
