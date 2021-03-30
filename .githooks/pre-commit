@@ -5,8 +5,8 @@
 branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
        "$(git describe --contains --all HEAD)"
 
-if [ "${branch##refs/heads/}" = "master" ]; then
-    printf "\e[31m%s\e[m\n" "[Error]"
-    echo "Cannot commit on master branch."
-    exit 1
+if [[ "${branch##refs/heads/}" = "master" ]]; then
+  printf "\e[31m%s\e[m\n" "[Error]"
+  echo "Cannot commit on master branch."
+  exit 1
 fi
